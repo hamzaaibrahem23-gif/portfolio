@@ -1,0 +1,320 @@
+@import "tailwindcss";
+
+/* Dark mode follows the data-theme attribute set on <html> (see app/layout.tsx). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Design tokens — Premium Dark Gold guide. Dark is the default theme. */
+:root,
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --surface: #111111;
+  --elevated: #1a1a1a;
+  --gold: #d4af37;
+  --gold-hover: #f0d878;
+  --gold-deep: #b8860b;
+  --foreground: #f5f5f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #8b8b94;
+  --border: rgba(212, 175, 55, 0.15);
+  --border-strong: rgba(212, 175, 55, 0.35);
+  --glow: 0 0 40px rgba(212, 175, 55, 0.18);
+  --hero-gradient: linear-gradient(135deg, #0a0a0a 0%, #111111 60%, rgba(212, 175, 55, 0.08) 100%);
+  --card-backdrop: hsl(0 0% 60% / 0.06);
+  --glow-lightness: 60;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --background: #fafaf7;
+  --surface: #ffffff;
+  --elevated: #f4f1e8;
+  --gold: #b8901f;
+  --gold-hover: #8f6d10;
+  --gold-deep: #6e5309;
+  --foreground: #0a0a0a;
+  --text-secondary: #52525b;
+  --text-muted: #63636b;
+  --border: rgba(184, 144, 31, 0.22);
+  --border-strong: rgba(184, 144, 31, 0.45);
+  --glow: 0 0 40px rgba(184, 144, 31, 0.16);
+  --hero-gradient: linear-gradient(135deg, #fafaf7 0%, #ffffff 60%, rgba(212, 175, 55, 0.14) 100%);
+  --card-backdrop: hsl(40 30% 98% / 0.7);
+  --glow-lightness: 45;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+  --color-gold-deep: var(--gold-deep);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --shadow-glow: var(--glow);
+
+  --animate-blob: blob 9s infinite;
+  --animate-gradient: gradient 8s linear infinite;
+  --animate-shine: shine 3s linear infinite;
+  --animate-spin-slow: spin 6s linear infinite;
+
+  @keyframes blob {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes shine {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 35%, transparent);
+}
+
+/* CSS entrance animations: run from first paint, before any JavaScript loads. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-enter {
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-fade-in {
+  animation: fade-in 1s ease both;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Subtle dotted grid used behind some sections. */
+.bg-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--gold) 18%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Rotating conic ring around the hero portrait (adapted from Nur UI glowing-card). */
+@property --ring-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.gold-ring {
+  background: conic-gradient(
+    from var(--ring-angle),
+    var(--gold-deep),
+    var(--gold),
+    var(--gold-hover),
+    transparent 40%,
+    var(--gold-deep) 60%,
+    var(--gold),
+    var(--gold-deep)
+  );
+  animation: ring-spin 6s linear infinite;
+}
+
+@keyframes ring-spin {
+  to {
+    --ring-angle: 360deg;
+  }
+}
+
+/* Glow card (Nur UI spotlight-card): spotlight fill + border glow at the pointer (--mx / --my). */
+.glow-card {
+  position: relative;
+  isolation: isolate;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 94%, transparent),
+    color-mix(in srgb, var(--elevated) 60%, transparent)
+  );
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--gold) 11%, transparent),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.glow-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: radial-gradient(
+    260px circle at var(--mx, 50%) var(--my, 50%),
+    var(--gold-hover),
+    var(--gold) 30%,
+    transparent 65%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+[data-theme="light"] .glow-card {
+  border-color: rgba(184, 144, 31, 0.18);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.04),
+    0 12px 32px -16px rgb(60 45 10 / 0.18);
+}
+
+.glow-card:hover,
+[data-theme="light"] .glow-card:hover {
+  box-shadow: var(--glow);
+}
+
+.glow-card:hover::before,
+.glow-card:hover::after {
+  opacity: 1;
+}
+
+/* Film-grain overlay for a subtle premium texture. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  transform: translateZ(0);
+}
+
+[data-theme="light"] .grain {
+  opacity: 0.05;
+}
+
+/* Infinite marquee used by the tech stack strip. */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Diagonal shine sweep on hover (certificate cards). */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgb(255 255 255 / 0.35) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .shine::after {
+  transform: translateX(120%);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
