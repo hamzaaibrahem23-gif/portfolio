@@ -22,9 +22,9 @@ type SectionProps = {
 // Shared wrapper for every page section: consistent spacing and heading.
 export function Section({ id, index, eyebrow, title, highlight, description, aside, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn("relative px-4 py-24 sm:px-6 md:py-32", className)}>
+    <section id={id} className={cn("relative px-4 py-20 sm:px-6 md:py-28", className)}>
       <div className="mx-auto max-w-6xl">
-        <Reveal className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <Reveal className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.25em] text-gold uppercase">
               {index && <span className="text-muted">{index}</span>}

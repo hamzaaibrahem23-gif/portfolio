@@ -30,7 +30,7 @@ const GradientHero = ({
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24 pb-24 sm:px-6 lg:pt-28"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-20 pb-24 sm:px-6 lg:pt-28"
       style={{ background: "var(--hero-gradient)" }}
     >
       <div className="absolute inset-0 z-0" aria-hidden="true">
@@ -40,8 +40,8 @@ const GradientHero = ({
         <div className="bg-grid absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <div className="space-y-6">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="space-y-5 sm:space-y-6">
           <div style={enter(0)} className="hero-enter inline-block">
             <div className="relative rounded-full border border-line-strong bg-surface/60 px-4 py-1.5 text-sm font-medium text-foreground backdrop-blur-sm">
               <span className="relative z-10 flex items-center gap-2">

@@ -18,16 +18,16 @@ export function Hero() {
       description={profile.tagline}
       actions={
         <>
-          <Button asChild size="lg" className="group">
+          <Button asChild size="lg" className="group max-sm:h-11 max-sm:px-5 max-sm:text-sm">
             <a href="#projects">
               View Projects
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
-          <Button asChild size="lg" variant="outline">
+          <Button asChild size="lg" variant="outline" className="max-sm:h-11 max-sm:px-5 max-sm:text-sm">
             <a href="#contact">Contact Me</a>
           </Button>
-          <Button asChild size="lg" variant="ghost">
+          <Button asChild size="lg" variant="ghost" className="max-sm:h-11 max-sm:px-3 max-sm:text-sm">
             <a href={profile.resume} target="_blank" rel="noopener noreferrer">
               <Download className="h-4 w-4" />
               Resume
@@ -48,7 +48,7 @@ export function Hero() {
         </>
       }
       visual={
-        <GradientGridHero className="flex h-[340px] max-w-[520px] items-center justify-center md:h-[500px]">
+        <GradientGridHero className="flex h-[270px] max-w-[520px] items-center justify-center md:h-[500px]">
           <div className="relative">
             {/* Rotating gold ring + soft glow behind the portrait */}
             <div className="absolute -inset-6 rounded-full bg-gold/20 blur-3xl" aria-hidden="true" />
@@ -61,8 +61,8 @@ export function Hero() {
                   height={1024}
                   loading="eager"
                   fetchPriority="high"
-                  sizes="(min-width: 768px) 340px, 260px"
-                  className="h-[260px] w-[260px] rounded-full object-cover md:h-[340px] md:w-[340px]"
+                  sizes="(min-width: 768px) 340px, 210px"
+                  className="h-[210px] w-[210px] rounded-full object-cover md:h-[340px] md:w-[340px]"
                 />
               </div>
             </div>

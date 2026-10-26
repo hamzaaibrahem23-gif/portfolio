@@ -107,7 +107,7 @@ export function About() {
                 aria-hidden="true"
               />
               <div className="relative flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-hover via-gold to-gold-deep text-black">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-gradient text-on-gold">
                   <Download className="h-5 w-5" />
                 </span>
                 <div>

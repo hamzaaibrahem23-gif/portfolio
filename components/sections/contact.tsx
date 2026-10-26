@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 import BackgroundShineButton from "@/components/nurui/background-shine-button";
@@ -18,7 +18,6 @@ const channels = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, icon: Mail },
   { label: "WhatsApp", value: profile.phone, href: profile.whatsapp, icon: FaWhatsapp },
   { label: "LinkedIn", value: "Hamza Ibrahem", href: linkedin, icon: FaLinkedinIn },
-  { label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}`, icon: Phone },
 ];
 
 export function Contact() {

@@ -50,7 +50,7 @@ export function Navbar() {
             scrolled && glass,
           )}
         >
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-gold-hover via-gold to-gold-deep text-xs font-black text-black">
+          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gold-gradient text-xs font-black text-on-gold">
             {profile.firstName[0]}
           </span>
           <span className="hidden sm:inline">
@@ -90,7 +90,7 @@ export function Navbar() {
           <ThemeToggle />
           <a
             href="#contact"
-            className="group hidden h-10 items-center gap-1 rounded-full bg-gradient-to-r from-gold-deep via-gold to-gold-hover px-5 text-sm font-semibold text-black transition hover:brightness-110 sm:inline-flex"
+            className="group hidden h-10 items-center gap-1 rounded-full bg-gold-gradient px-5 text-sm font-semibold text-on-gold transition hover:brightness-110 sm:inline-flex"
           >
             Hire me
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

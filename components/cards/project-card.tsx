@@ -130,7 +130,7 @@ export function ProjectCard({ project, variant = "default" }: ProjectCardProps) 
                 className={cn(
                   "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all",
                   i === 0
-                    ? "bg-gradient-to-r from-gold-deep via-gold to-gold-hover text-black hover:brightness-110"
+                    ? "bg-gold-gradient text-on-gold hover:brightness-110"
                     : "border border-line text-foreground hover:border-gold hover:text-gold",
                 )}
               >

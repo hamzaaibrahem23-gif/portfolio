@@ -11,7 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-gradient-to-r from-gold-deep via-gold to-gold-hover text-black shadow-glow hover:brightness-110 dark:text-black",
+          "bg-gold-gradient text-on-gold shadow-glow hover:brightness-110",
         outline: "border border-line-strong bg-surface/40 text-foreground backdrop-blur hover:border-gold hover:text-gold",
         ghost: "text-secondary hover:bg-elevated hover:text-gold",
         link: "text-gold underline-offset-4 hover:underline",

@@ -15,7 +15,7 @@ All content lives in `data/` — the section components read from these files, s
 | --- | --- | --- |
 | Name, bio, contact info, social links | `data/profile.ts` | |
 | Projects | `data/projects.ts` | Add a screenshot to `public/projects/` and set `image`, or set `logo` (in `public/projects/logos/`) for private projects. With neither, a "Screenshot coming soon" placeholder shows. `featured: true` shows the project before "Show all projects"; the first featured project gets the large spotlight card. |
-| Certifications | `data/certifications.ts` | Put a preview `image` (1200×927 WebP works best) and the `pdf` in `public/certificates/`. Certificates with an image appear in the gallery (with lightbox and issuer filter); the rest are listed under "More credentials". |
+| Certifications | `data/certifications.ts` | Put a preview `image` (1200×927 WebP works best) and the `pdf` in `public/certificates/`. Certificates with an image appear in the gallery (with lightbox and issuer filter), which shows the first 6 (3 on phones) until "Show all"; the rest are listed under "More credentials". |
 | Experience timeline | `data/experience.ts` | Newest role first. |
 | Education | `data/education.ts` | |
 | Tech stack | `data/skills.ts` | Icons come from `react-icons/si`. |

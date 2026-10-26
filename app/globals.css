@@ -21,6 +21,10 @@
   --hero-gradient: linear-gradient(135deg, #0a0a0a 0%, #111111 60%, rgba(212, 175, 55, 0.08) 100%);
   --card-backdrop: hsl(0 0% 60% / 0.06);
   --glow-lightness: 60;
+  --btn-from: #b8860b;
+  --btn-via: #d4af37;
+  --btn-to: #f0d878;
+  --btn-text: #000000;
   color-scheme: dark;
 }
 
@@ -28,18 +32,23 @@
   --background: #fafaf7;
   --surface: #ffffff;
   --elevated: #f4f1e8;
-  --gold: #b8901f;
-  --gold-hover: #8f6d10;
-  --gold-deep: #6e5309;
+  --gold: #9a6a05;
+  --gold-hover: #b57d12;
+  --gold-deep: #7a5004;
   --foreground: #0a0a0a;
   --text-secondary: #52525b;
   --text-muted: #63636b;
-  --border: rgba(184, 144, 31, 0.22);
-  --border-strong: rgba(184, 144, 31, 0.45);
-  --glow: 0 0 40px rgba(184, 144, 31, 0.16);
+  --border: rgba(181, 125, 18, 0.22);
+  --border-strong: rgba(181, 125, 18, 0.45);
+  --glow: 0 0 40px rgba(181, 125, 18, 0.18);
   --hero-gradient: linear-gradient(135deg, #fafaf7 0%, #ffffff 60%, rgba(212, 175, 55, 0.14) 100%);
   --card-backdrop: hsl(40 30% 98% / 0.7);
   --glow-lightness: 45;
+  /* Deeper stops for gold buttons so their white text stays readable. */
+  --btn-from: #7a5004;
+  --btn-via: #9a6a05;
+  --btn-to: #b57d12;
+  --btn-text: #ffffff;
   color-scheme: light;
 }
 
@@ -59,6 +68,7 @@
   --font-heading: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --shadow-glow: var(--glow);
+  --color-on-gold: var(--btn-text);
 
   --animate-blob: blob 9s infinite;
   --animate-gradient: gradient 8s linear infinite;
@@ -98,6 +108,11 @@
       background-position: -200% 0;
     }
   }
+}
+
+/* Gold gradient for buttons/badges; pair with text-on-gold (black in dark mode, white in light). */
+@utility bg-gold-gradient {
+  background-image: linear-gradient(to right, var(--btn-from), var(--btn-via), var(--btn-to));
 }
 
 body {
@@ -241,7 +256,7 @@ body {
 }
 
 [data-theme="light"] .glow-card {
-  border-color: rgba(184, 144, 31, 0.18);
+  border-color: rgba(181, 125, 18, 0.18);
   box-shadow:
     0 1px 2px rgb(0 0 0 / 0.04),
     0 12px 32px -16px rgb(60 45 10 / 0.18);

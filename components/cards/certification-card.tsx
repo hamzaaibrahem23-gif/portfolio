@@ -48,7 +48,7 @@ export function CertificationCard({ cert, onOpen }: CertificationCardProps) {
             type="button"
             onClick={onOpen}
             aria-label={`View ${title} certificate`}
-            className="shine relative block w-full overflow-hidden rounded-2xl border border-line bg-white p-2 shadow-[0_24px_48px_-24px_rgb(0_0_0/0.6)] transition-shadow duration-500 group-hover:shadow-glow"
+            className="shine relative block w-full overflow-hidden rounded-2xl border border-line bg-white p-2 shadow-[0_24px_48px_-24px_rgb(0_0_0/0.6)] transition-[box-shadow,filter] duration-500 group-hover:shadow-glow dark:brightness-[0.85] dark:group-hover:brightness-100"
           >
             <div className="relative aspect-[1200/927] overflow-hidden rounded-xl">
               {image && (

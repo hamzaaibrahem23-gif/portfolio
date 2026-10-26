@@ -87,8 +87,6 @@ export const projects: Project[] = [
       "A comprehensive HR platform integrating human-resource operations, built across both the frontend and backend.",
     highlights: ["Implemented frontend and backend components of an integrated HR platform"],
     tech: ["Full-stack", "B2B SaaS"],
-    logo: "/projects/logos/hr-management.svg",
-    featured: true,
   },
   {
     slug: "biladmart",
@@ -98,7 +96,6 @@ export const projects: Project[] = [
     tech: ["Laravel", "Bagisto"],
     image: "/projects/biladmart.webp",
     links: [{ label: "Live site", href: "https://biladmart.com" }],
-    featured: true,
   },
   {
     slug: "clickfix",
