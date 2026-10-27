@@ -14,13 +14,13 @@ export const profile = {
   role: "Full-Stack Web Developer",
   tagline: "I build production-grade web applications — from secure APIs to polished, fast interfaces.",
   summary:
-    "Results-driven web developer with 3+ years of experience in full-stack development using Laravel, JavaScript, and WordPress. Skilled in building, optimizing, and delivering web applications that improve functionality, user experience, and performance.",
+    "Results-driven web developer with 4+ years of experience in full-stack development using Laravel, JavaScript, and WordPress. Skilled in building, optimizing, and delivering web applications that improve functionality, user experience, and performance.",
   about: [
-    "I'm a full-stack engineer who cares about the whole system — the database schema, the API contract, and the pixel the user actually clicks. Over the past 3+ years I've shipped HR platforms, payment gateways, e-commerce stores, and SaaS marketing sites for teams across the region.",
+    "I'm a full-stack engineer who cares about the whole system — the database schema, the API contract, and the pixel the user actually clicks. Over the past 4+ years I've shipped HR platforms, payment gateways, e-commerce stores, and SaaS marketing sites for teams across the region.",
     "I approach every project with an engineering mindset: clear architecture, secure authentication, maintainable code, and performance that holds up as the product grows. I work closely with cross-functional teams and follow modern web development best practices.",
   ],
   focusAreas: ["Fintech systems", "APIs & integrations", "SaaS platforms", "E-commerce systems", "Scalable full-stack architecture"],
-  yearsOfExperience: "3+",
+  yearsOfExperience: "4+",
   location: "Latakia, Syria",
   email: "hamzaaibrahem23@gmail.com",
   phone: "+963 931 612 289",

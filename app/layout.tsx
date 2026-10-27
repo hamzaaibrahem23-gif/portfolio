@@ -26,7 +26,7 @@ const inter = Inter({
 
 const title = `${profile.name} — ${profile.title} & ${profile.role}`;
 const description =
-  "Hamza Ibrahem is a software engineer and full-stack web developer with 3+ years of experience building SaaS, fintech, HR and e-commerce platforms with Laravel, Next.js, NestJS and WordPress.";
+  "Hamza Ibrahem is a software engineer and full-stack web developer with 4+ years of experience building SaaS, fintech, HR and e-commerce platforms with Laravel, Next.js, NestJS and WordPress.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
