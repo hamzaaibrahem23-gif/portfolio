@@ -73,10 +73,7 @@ export const projects: Project[] = [
     highlights: ["Designed and implemented the Strapi content types", "Next.js frontend consuming the CMS API"],
     tech: ["Next.js", "Strapi", "Headless CMS"],
     image: "/projects/wildandorg.webp",
-    links: [
-      { label: "Live site", href: "https://wildandorg.com" },
-      { label: "Vercel", href: "https://wildnorg.vercel.app" },
-    ],
+    links: [{ label: "Live site", href: "https://wildandorg.com" }],
     featured: true,
   },
   {
