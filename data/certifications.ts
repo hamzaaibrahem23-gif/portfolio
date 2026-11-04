@@ -17,6 +17,15 @@ export type Certification = {
 // Certificates with an `image` appear in the gallery; the rest are listed under "More credentials".
 export const certifications: Certification[] = [
   {
+    title: "Introduction to Containers w/ Docker, Kubernetes & OpenShift",
+    issuer: "IBM",
+    platform: "Coursera",
+    date: "Nov 2026",
+    credentialUrl: "https://coursera.org/verify/0EA4BJGDZPMF",
+    image: "/certificates/containers-docker-kubernetes-openshift.webp",
+    pdf: "/certificates/containers-docker-kubernetes-openshift.pdf",
+  },
+  {
     title: "Django Application Development with SQL and Databases",
     issuer: "IBM",
     platform: "Coursera",
