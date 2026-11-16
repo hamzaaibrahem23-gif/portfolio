@@ -17,6 +17,15 @@ export type Certification = {
 // Certificates with an `image` appear in the gallery; the rest are listed under "More credentials".
 export const certifications: Certification[] = [
   {
+    title: "Application Development using Microservices and Serverless",
+    issuer: "IBM",
+    platform: "Coursera",
+    date: "Nov 2026",
+    credentialUrl: "https://coursera.org/verify/SYKD470AH9C9",
+    image: "/certificates/microservices-serverless.webp",
+    pdf: "/certificates/microservices-serverless.pdf",
+  },
+  {
     title: "Introduction to Containers w/ Docker, Kubernetes & OpenShift",
     issuer: "IBM",
     platform: "Coursera",
